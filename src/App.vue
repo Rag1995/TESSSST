@@ -1,57 +1,60 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <!-- Load Facebook SDK for JavaScript -->
-    <!-- <div id="fb-root"></div> -->
-    <!-- Your Chat Plugin code -->
-    <!-- <div class="fb-customerchat"
-      attribution=setup_tool
-      page_id="179163795468160">
-    </div> -->
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
+
+        <v-img
+          alt="Vuetify Name"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          width="100"
+        />
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <HelloWorld/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
+    HelloWorld,
   },
-  // created() {
-  //   // 防止重複載入
-  //   if (!window.FB) {
-  //     window.fbAsyncInit = () => {
-  //       window.FB.init({
-  //         // appId: '{your-app-id}', // 填入自己 app 的 id
-  //         // cookie: true,
-  //         xfbml: true,
-  //         version: 'v9.0' // 目前版本
-  //       });
-  //     };
 
-  //     ((d, s, id) => {
-  //       const fjs = d.getElementsByTagName(s)[0];
-  //       if (d.getElementById(id)) return;
-  //       const js = d.createElement(s);
-  //       js.id = id;
-  //       js.src = 'https://connect.facebook.net/en_US/sdk.js';
-  //       fjs.parentNode.insertBefore(js, fjs);
-  //     })(document, 'script', 'facebook-jssdk');
-  //   }
-  // }
-}
+  data: () => ({
+    //
+  }),
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
